@@ -1,5 +1,6 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc_project_demo/authentication/bloc/authentication_bloc.dart';
+import 'package:bloc_project_demo/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_repository/user_repository.dart';
@@ -48,6 +49,9 @@ class _AppViewState extends State<AppView> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: _navigatorKey,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Pallete.backgroundColor,
+      ),
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
